@@ -6,18 +6,33 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); // eslint-disable-line no-var
+
 
 console.log('yooooo', path.join(__dirname, '..', 'draft-js-focus-plugin', 'src'));
 
 module.exports = {
   plugins: [
+    new webpack.ProvidePlugin({
+      videojs: 'video.js',
+    })
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+        use: [
+          {loader: "style-loader"},
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            }
+          },
+        ],
         include: [
           path.join(__dirname, '..', 'stories'),
           path.join(__dirname, '..', 'draft-js-plugins-editor', 'src'),
@@ -40,7 +55,21 @@ module.exports = {
           path.join(__dirname, '..', 'draft-js-resizeable-plugin', 'src'),
           path.join(__dirname, '..', 'draft-js-buttons', 'src'),
           path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
+          path.join(__dirname, '..', 'draft-js-audio-plugin', 'src'),
         ],
+        exclude: path.join(__dirname, '..', 'draft-js-video-plugin', 'src', 'video', 'components'),
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {loader: "style-loader"},
+          {
+            loader: "css-loader",
+          },
+        ],
+        include: [
+          path.join(__dirname, '..', 'draft-js-video-plugin', 'src', 'video', 'components'),
+        ]
       },
       {
         test: /plugin\.css$/,
@@ -69,13 +98,17 @@ module.exports = {
           path.join(__dirname, '..', 'draft-js-resizeable-plugin', 'src'),
           path.join(__dirname, '..', 'draft-js-buttons', 'src'),
           path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
+          path.join(__dirname, '..', 'draft-js-audio-plugin', 'src'),
         ],
       }, {
         test: /\.(png|jpg|gif|ico)$/,
         use: [
           { loader: 'file-loader', options: { name: '[name].[ext]' } },
         ],
-      },
+      }, {
+        test: /\.(ttf|eot|svg|woff(2))(\?[a-z0-9]+)?$/,
+        loader: 'url-loader',
+      }
     ],
   },
   resolve: {
@@ -100,6 +133,7 @@ module.exports = {
       'draft-js-resizeable-plugin': path.join(__dirname, '..', 'draft-js-resizeable-plugin', 'src'),
       'draft-js-buttons': path.join(__dirname, '..', 'draft-js-buttons', 'src'),
       'draft-js-video-plugin': path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
+      'draft-js-audio-plugin': path.join(__dirname, '..', 'draft-js-audio-plugin', 'src'),
       react: path.join(__dirname, '..', 'node_modules', 'react'),
     },
   }

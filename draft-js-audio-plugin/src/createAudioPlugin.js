@@ -1,15 +1,13 @@
 import decorateComponentWithProps from 'decorate-component-with-props';
 import { EditorState, Modifier, SelectionState } from 'draft-js';
 
-import addImage from './modifiers/addImage';
-import ImageComponent from './Image';
-import imageStyles from './imageStyles.css';
+import addAudio from './audio/modifiers/addAudio';
+import DefaultaudioComponent from './audio/components/DefaultAudioComponent';
+import * as types from './audio/constants';
+import audioStyles from './audioStyles.css';
 
-const defaultTheme = {
-  image: imageStyles.image,
-  inputWrapper: imageStyles.inputWrapper,
-  input: imageStyles.input
-};
+const defaultTheme = audioStyles;
+
 
 const updateData = (contentBlock, { getEditorState, setEditorState }) => (data) => {
   const editorState = getEditorState();
@@ -26,37 +24,41 @@ const updateData = (contentBlock, { getEditorState, setEditorState }) => (data) 
   setEditorState(newEditorState);
 };
 
-export default (config = {}) => {
+const audioPlugin = (config = {}) => {
   const theme = config.theme ? Object.assign({}, defaultTheme, config.theme) : defaultTheme;
-  let Image = config.imageComponent || ImageComponent;
+  let audio = config.audioComponent || DefaultaudioComponent;
   if (config.decorator) {
-    Image = config.decorator(Image);
+    audio = config.decorator(audio);
   }
-  const ThemedImage = decorateComponentWithProps(Image, { theme });
+  const Themedaudio = decorateComponentWithProps(audio, { theme });
   return {
     blockRendererFn: (block, { getEditorState, setEditorState, setReadOnly, getReadOnly }) => {
-      if (block.getType() === 'atomic') {
+      if (block.getType() === types.ATOMIC) {
+        // TODO subject to change for draft-js next release
+        // const contentState = getEditorState().getCurrentContent();
+        // const entity = contentState.getEntity(block.getEntityAt(0));
+        // const type = entity.getType();
         const data = block.getData().toJS();
         const { type } = data;
-        if (type === 'img') {
+        if (type === types.AUDIOTYPE) {
           return {
-            component: ThemedImage,
+            component: Themedaudio,
             editable: false,
             props: {
               ...data,
               setReadOnly,
               getReadOnly,
               updateData: updateData(block, { getEditorState, setEditorState }),
-            }
+            },
           };
         }
-        return null;
       }
 
       return null;
     },
-    addImage,
+    addAudio,
+    types,
   };
 };
 
-export const Image = ImageComponent;
+export default audioPlugin;

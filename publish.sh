@@ -68,3 +68,6 @@ cd ..
 cd draft-js-video-plugin
 npm publish --tag beta
 cd ..
+cd draft-js-audio-plugin
+npm publish --tag beta
+cd ..

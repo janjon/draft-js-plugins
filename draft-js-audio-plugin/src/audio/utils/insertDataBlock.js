@@ -53,4 +53,4 @@ function insertDataBlock(editorState, data, selection) {
   return EditorState.push(editorState, newContent, 'insert-fragment');
 }
 
-export default (editorState, extraData) => insertDataBlock(editorState, extraData);
+export default insertDataBlock;

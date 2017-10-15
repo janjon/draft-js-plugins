@@ -2,6 +2,21 @@ import unionClassNames from 'union-class-names';
 import React, { Component } from 'react';
 
 export default class Image extends Component {
+  setReadOnly = (readOnly) => {
+    const {
+      setReadOnly,
+      getReadOnly
+    } = this.props.blockProps;
+    if (getReadOnly() === readOnly) return;
+    setReadOnly(readOnly);
+  }
+  handleCaptionChange = (event) => {
+    event.stopPropagation();
+    const {
+      blockProps: { updateData },
+    } = this.props;
+    updateData({ caption: event.target.value });
+  }
   render() {
     const {
       block,
@@ -23,14 +38,19 @@ export default class Image extends Component {
       ...elementProps
     } = otherProps;
     const combinedClassName = unionClassNames(theme.image, className);
-    const { src } = contentState.getEntity(block.getEntityAt(0)).getData();
+    const { caption, src } = blockProps;
     return (
-      <img
-        {...elementProps}
-        src={src}
-        role="presentation"
-        className={combinedClassName}
-      />
+      <div>
+        <img
+          {...elementProps}
+          src={src}
+          role="presentation"
+          className={combinedClassName}
+        />
+        <div className={theme.inputWrapper}>
+          <input value={caption} onChange={this.handleCaptionChange} className={theme.input} type="text" placeholder="请输入标题" onFocus={() => this.setReadOnly(true)} onBlur={() => this.setReadOnly(false)} />
+        </div>
+      </div>
     );
   }
 }

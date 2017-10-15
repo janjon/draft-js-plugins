@@ -66,6 +66,8 @@
       "draft-js-sticker-plugin/lib/plugin.css",
       "draft-js-undo-plugin",
       "draft-js-undo-plugin/lib/plugin.css",
+      "draft-js-audio-plugin",
+      "draft-js-audio-plugin/lib/plugin.css",
       "draft-js-video-plugin",
       "draft-js-video-plugin/lib/plugin.css"
     ]

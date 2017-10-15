@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   convertFromRaw,
   EditorState,
+  convertToRaw
 } from 'draft-js';
 
 import Editor, { composeDecorators } from 'draft-js-plugins-editor';
@@ -118,6 +119,11 @@ export default class CustomImageEditor extends Component {
             ref={(element) => { this.editor = element; }}
           />
           <AlignmentTool />
+          <textarea
+            readOnly
+            className={editorStyles['rdw-storybook-textarea']}
+            value={JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))}
+          />
         </div>
       </div>
     );

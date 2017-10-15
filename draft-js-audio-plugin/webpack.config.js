@@ -13,20 +13,11 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?modules&importLoaders=1&localIdentName=draftJsMentionPlugin__[local]__[hash:base64:5]!postcss-loader' }),
-        exclude: path.join(__dirname, 'src', 'video', 'components'),
       },
       {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-          },
-        ],
-        include: [
-          path.join(__dirname, 'src', 'video', 'components'),
-        ]
-      },
+        test: /\.(ttf|eot|svg|woff(2))(\?[a-z0-9]+)?$/,
+        loader: 'file-loader',
+      }
     ],
   },
 

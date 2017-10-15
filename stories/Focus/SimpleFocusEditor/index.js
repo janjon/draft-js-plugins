@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   convertFromRaw,
   EditorState,
+  convertToRaw,
 } from 'draft-js';
 import Editor, { composeDecorators } from 'draft-js-plugins-editor';
 import createFocusPlugin from 'draft-js-focus-plugin';
@@ -82,6 +83,11 @@ export default class CustomImageEditor extends Component {
           onChange={this.onChange}
           plugins={plugins}
           ref={(element) => { this.editor = element; }}
+        />
+        <textarea
+          readOnly
+          className={editorStyles['rdw-storybook-textarea']}
+          value={JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))}
         />
       </div>
     );

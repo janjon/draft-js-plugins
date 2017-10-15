@@ -1,4 +1,12 @@
-.image {}
+.container {
+  position: relative;
+}
+
+.invalidAudioSrc {
+  text-align: center;
+  background-color: #eaeaea;
+  padding: 1em;
+}
 
 .inputWrapper {
   padding: 16px;
@@ -13,11 +21,9 @@
   border-bottom: 1px solid #d9d9d9;
   color: #999;
   display: block;
-  padding: 8px 0;
   width: 100%;
   font-size: 14px;
   outline: none;
-  text-align: center;
 }
 .input:focus, .input:hover {
   border-color: #999;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   convertFromRaw,
   EditorState,
+  convertToRaw
 } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
 import createImagePlugin from 'draft-js-image-plugin';
@@ -78,6 +79,11 @@ export default class SimpleImageEditor extends Component {
             onChange={this.onChange}
             plugins={plugins}
             ref={(element) => { this.editor = element; }}
+          />
+          <textarea
+            readOnly
+            className={editorStyles['rdw-storybook-textarea']}
+            value={JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))}
           />
         </div>
       </div>

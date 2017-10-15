@@ -1,2 +1,2 @@
-export const VIDEOTYPE = 'draft-js-video-plugin-video';
+export const VIDEOTYPE = 'video';
 export const ATOMIC = 'atomic';
