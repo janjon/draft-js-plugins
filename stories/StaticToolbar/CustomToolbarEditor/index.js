@@ -76,7 +76,12 @@ const toolbarPlugin = createToolbarPlugin({
     OrderedListButton,
     BlockquoteButton,
     CodeBlockButton
-  ]
+  ],
+  theme: {
+    toolbarStyles: {
+      toolbar: editorStyles.toolbar
+    }
+  }
 });
 const { Toolbar } = toolbarPlugin;
 const plugins = [toolbarPlugin];

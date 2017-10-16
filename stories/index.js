@@ -54,6 +54,11 @@ import MentionEditorWithCustomTrigger from './Mention/MentionEditorWithCustomTri
 import SimpleSideToolbarEditor from './SideToolbar/SimpleSideToolbarEditor';
 import CustomSideToolbarEditor from './SideToolbar/CustomSideToolbarEditor';
 
+// StaticToolbar
+import CustomToolbarEditor from './StaticToolbar/CustomToolbarEditor';
+import SimpleToolbarEditor from './StaticToolbar/SimpleToolbarEditor';
+import ThemedToolbarEditor from './StaticToolbar/ThemedToolbarEditor';
+
 // Sticker
 import SimpleStickerEditor from './Sticker/SimpleStickerEditor';
 import CustomStickerEditor from './Sticker/CustomStickerEditor';
@@ -116,6 +121,11 @@ storiesOf('Mention Plugin')
 storiesOf('Side Toolbar Plugin')
   .add('Editor with SideToolbar Plugin', () => <SimpleSideToolbarEditor />)
   .add('Editor with custom themed SideToolbar Plugin', () => <CustomSideToolbarEditor />);
+
+storiesOf('StaticToolbar Plugin')
+  .add('CustomToolbarEditor Plugin', () => <CustomToolbarEditor />)
+  .add('SimpleToolbarEditor Plugin', () => <SimpleToolbarEditor />)
+  .add('ThemedToolbarEditor Plugin', () => <ThemedToolbarEditor />);
 
 storiesOf('Sticker Plugin')
   .add('Editor with Sticker Plugin', () => <SimpleStickerEditor />)

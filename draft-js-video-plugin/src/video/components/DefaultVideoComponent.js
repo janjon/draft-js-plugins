@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Player } from 'video-react';
 
-import './video.css';
-
-// import utils from '../utils';
-
 class DefaultVideoCompoent extends Component {
   setReadOnly = (readOnly) => {
     const {

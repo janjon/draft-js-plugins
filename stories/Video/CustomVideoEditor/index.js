@@ -40,7 +40,9 @@ const decorator = composeDecorators(
 const videoPlugin = createVideoPlugin({ decorator,
   theme: {
     iframe: editorStyles.customIfram,
-    iframeContainer: editorStyles.customVideoContainer
+    iframeContainer: editorStyles.customVideoContainer,
+    inputWrapper: editorStyles.inputWrapper,
+    input: editorStyles.input
   }
 });
 const imagePlugin = createImagePlugin({ decorator,

@@ -1,6 +1,6 @@
 {
   "name": "@yfmd/draft-js-video-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Video Plugin for DraftJS",
   "author": {
     "name": "Anchen li"

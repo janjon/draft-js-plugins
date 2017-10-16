@@ -54,10 +54,9 @@ module.exports = {
           path.join(__dirname, '..', 'draft-js-image-plugin', 'src'),
           path.join(__dirname, '..', 'draft-js-resizeable-plugin', 'src'),
           path.join(__dirname, '..', 'draft-js-buttons', 'src'),
-          path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
           path.join(__dirname, '..', 'draft-js-audio-plugin', 'src'),
         ],
-        exclude: path.join(__dirname, '..', 'draft-js-video-plugin', 'src', 'video', 'components'),
+        exclude: path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
       },
       {
         test: /\.css$/,
@@ -68,7 +67,7 @@ module.exports = {
           },
         ],
         include: [
-          path.join(__dirname, '..', 'draft-js-video-plugin', 'src', 'video', 'components'),
+          path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
         ]
       },
       {
