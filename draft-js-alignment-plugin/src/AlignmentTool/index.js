@@ -5,7 +5,7 @@ import {
   AlignBlockLeftButton,
   AlignBlockCenterButton,
   AlignBlockRightButton,
-} from 'draft-js-buttons';
+} from '@yfmd/draft-js-buttons';
 import styles from '../alignmentToolStyles.css';
 import buttonStyles from '../buttonStyles.css';
 

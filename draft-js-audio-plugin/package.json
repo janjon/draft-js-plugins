@@ -1,6 +1,6 @@
 {
-  "name": "draft-js-audio-plugin",
-  "version": "2.0.0-rc8",
+  "name": "@yfmd/draft-js-audio-plugin",
+  "version": "1.0.0",
   "description": "Audio Plugin for DraftJS",
   "author": {
     "name": "Anchen li"
@@ -39,6 +39,7 @@
   },
   "peerDependencies": {
     "draft-js": "^0.10.1",
+    "@yfmd/aplayer": "^1.0.0",
     "react": "^15.5.0 || ^16.0.0-rc",
     "react-dom": "^15.5.0 || ^16.0.0-rc"
   }

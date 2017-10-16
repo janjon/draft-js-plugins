@@ -65,7 +65,7 @@ class DefaultAudioCompoent extends Component {
     inputEle.onblur = () => {
       this.setReadOnly(false);
     };
-    inputEle.onchange = this.handleCaptionChange;
+    inputEle.oninput = this.handleCaptionChange;
     inputEle.value = caption;
     inputContainer.appendChild(inputEle);
     titleEle.innerHTML = '';

@@ -7,7 +7,7 @@ import {
   CodeBlockButton,
   UnorderedListButton,
   OrderedListButton,
-} from 'draft-js-buttons';
+} from '@yfmd/draft-js-buttons';
 
 import BlockTypeSelect from '../BlockTypeSelect';
 

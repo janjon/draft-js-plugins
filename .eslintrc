@@ -23,7 +23,7 @@
     "import/no-webpack-loader-syntax": 0,
     "import/extensions": 0,
     "jsx-a11y/img-has-alt": 0,
-    "react/require-default-props": 0,
+    "react/require-default-props": 0
   },
   "settings": {
     "import/core-modules": [
@@ -33,6 +33,8 @@
       "draft-js-anchor-plugin/lib/plugin.css",
       "draft-js-buttons",
       "draft-js-buttons/lib/plugin.css",
+      "@yfmd/draft-js-buttons",
+      "@yfmd/draft-js-buttons/lib/plugin.css",
       "draft-js-counter-plugin",
       "draft-js-counter-plugin/lib/plugin.css",
       "draft-js-drag-n-drop-plugin",

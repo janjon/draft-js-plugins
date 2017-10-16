@@ -1,5 +1,5 @@
 {
-  "name": "draft-js-emoji-plugin",
+  "name": "@yfmd/draft-js-emoji-plugin",
   "version": "2.0.0-rc9",
   "description": "Emoji Plugin for DraftJS",
   "author": {

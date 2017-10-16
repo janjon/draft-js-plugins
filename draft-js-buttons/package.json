@@ -1,6 +1,6 @@
 {
-  "name": "draft-js-buttons",
-  "version": "2.0.0-rc8",
+  "name": "@yfmd/draft-js-buttons",
+  "version": "1.0.0",
   "description": "Buttons for DraftJS",
   "author": {
     "name": "Nik Graf",

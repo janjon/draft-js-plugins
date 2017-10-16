@@ -132,6 +132,7 @@ module.exports = {
       'draft-js-image-plugin': path.join(__dirname, '..', 'draft-js-image-plugin', 'src'),
       'draft-js-resizeable-plugin': path.join(__dirname, '..', 'draft-js-resizeable-plugin', 'src'),
       'draft-js-buttons': path.join(__dirname, '..', 'draft-js-buttons', 'src'),
+      '@yfmd/draft-js-buttons': path.join(__dirname, '..', 'draft-js-buttons', 'src'),
       'draft-js-video-plugin': path.join(__dirname, '..', 'draft-js-video-plugin', 'src'),
       'draft-js-audio-plugin': path.join(__dirname, '..', 'draft-js-audio-plugin', 'src'),
       react: path.join(__dirname, '..', 'node_modules', 'react'),
