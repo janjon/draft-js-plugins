@@ -1,7 +1,6 @@
-import { List, Repeat } from 'immutable';
+import { List, Map } from 'immutable';
 import {
   Modifier,
-  CharacterMetadata,
   BlockMapBuilder,
   ContentBlock,
   genKey
@@ -24,7 +23,6 @@ export default function (editorState, selection, type, data, entityType, text = 
   const block = currentContentState.getBlockForKey(blockKeyForTarget);
   let insertionTargetSelection;
   let insertionTargetBlock;
-
   // In case there are no characters or entity or the selection is at the start it
   // is safe to insert the block in the current block.
   // Otherwise a new block is created (the block is always its own block)
@@ -46,18 +44,18 @@ export default function (editorState, selection, type, data, entityType, text = 
 
   // creating a new ContentBlock including the entity with data
   // Entity will be created with a specific type, if defined, else will fall back to the ContentBlock type
-  const contentStateWithEntity = newContentStateAfterSplit.createEntity(
-    entityType || type, 'IMMUTABLE', { ...data }
-  );
-  const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
-  const charData = CharacterMetadata.create({ entity: entityKey });
-
+  // const contentStateWithEntity = newContentStateAfterSplit.createEntity(
+  //   entityType || type, 'IMMUTABLE', { ...data }
+  // );
+  // const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+  // const charData = CharacterMetadata.create({ entity: entityKey });
   const fragmentArray = [
     new ContentBlock({
       key: genKey(),
       type,
       text,
-      characterList: List(Repeat(charData, text.length || 1)), // eslint-disable-line new-cap
+      characterList: List(), // eslint-disable-line new-cap
+      data: new Map(data),
     }),
 
     // new contentblock so we can continue wrting right away after inserting the block

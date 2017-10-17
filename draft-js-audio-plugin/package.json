@@ -38,7 +38,7 @@
     "file-loader": "^1.1.5"
   },
   "peerDependencies": {
-    "draft-js": "^0.10.1",
+    "draft-js": "^0.10.3",
     "@yfmd/aplayer": "^1.0.0",
     "react": "^15.5.0 || ^16.0.0-rc",
     "react-dom": "^15.5.0 || ^16.0.0-rc"

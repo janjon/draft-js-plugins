@@ -26,13 +26,14 @@ export default (
     // Get content, selection, block
     const contentState = editorState.getCurrentContent();
     const block = contentState.getBlockForKey(blockKey);
-    const entity = contentState.getEntity(block.getEntityAt(0));
+    // const entity = contentState.getEntity(block.getEntityAt(0));
+    const blockData = block.getData().toJS();
     const contentStateAfterInsert = addBlock(
       editorState,
       selection,
       block.getType(),
-      entity.data,
-      entity.type
+      blockData,
+      blockData.type,
     );
     const contentStateAfterRemove = removeBlock(contentStateAfterInsert, blockKey);
 
