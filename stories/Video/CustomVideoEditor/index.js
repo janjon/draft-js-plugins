@@ -239,7 +239,7 @@ export default class CustomVideoEditor extends Component {
         <textarea
           readOnly
           className={editorStyles['rdw-storybook-textarea']}
-          value={JSON.stringify(convertToRaw(editorState.getCurrentContent()))}
+          value={JSON.stringify(editorState.getCurrentContent(), null, 4)}
         />
       </div>
     );

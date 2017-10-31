@@ -13,9 +13,17 @@
   min-height: 140px;
 }
 
+.editor :global(.public-DraftStyleDefault-block) {
+  margin: 1em 0;
+}
+
+.editor :global(.public-DraftStyleDefault-ltr) {
+  direction: ltr;
+  text-align: left;
+}
+
 .rdw-storybook-textarea {
   margin-top: 20px;
-  resize: none;
   width: 100%;
   border: 1px solid #F1F1F1;
   height: 100px;
