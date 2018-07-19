@@ -23,14 +23,15 @@ class DefaultVideoCompoent extends Component {
       blockProps,
       className = '',
       style,
-      theme
+      theme,
+      playerProp,
     } = this.props;
     const { src, poster, caption } = blockProps;
     if (src) {
       return (
         <div style={style} >
           <div className={`${theme.iframeContainer} ${className}`}>
-            <Player src={src} poster={poster} />
+            <Player {...playerProp} src={src} poster={poster} />
           </div>
           <div className={theme.inputWrapper}>
             <input value={caption} onChange={this.handleCaptionChange} className={theme.input} type="text" placeholder="请输入标题" onFocus={() => this.setReadOnly(true)} onBlur={() => this.setReadOnly(false)} />

@@ -26,11 +26,12 @@ const updateData = (contentBlock, { getEditorState, setEditorState }) => (data) 
 
 const videoPlugin = (config = {}) => {
   const theme = config.theme ? Object.assign({}, defaultTheme, config.theme) : defaultTheme;
+  const playerProp = config.playerProp || {};
   let Video = config.videoComponent || DefaultVideoComponent;
   if (config.decorator) {
     Video = config.decorator(Video);
   }
-  const ThemedVideo = decorateComponentWithProps(Video, { theme });
+  const ThemedVideo = decorateComponentWithProps(Video, { theme, playerProp });
   return {
     blockRendererFn: (block, { getEditorState, setEditorState, setReadOnly, getReadOnly }) => {
       if (block.getType() === types.ATOMIC) {
