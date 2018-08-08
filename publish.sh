@@ -27,6 +27,9 @@ cd ..
 cd draft-js-image-plugin
 npm publish --tag beta
 cd ..
+cd draft-js-table-plugin
+npm publish --tag beta
+cd ..
 cd draft-js-inline-toolbar-plugin
 npm install
 npm publish --tag beta

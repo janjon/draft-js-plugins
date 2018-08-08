@@ -78,6 +78,8 @@ module: {
       path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-focus-plugin', 'src'),
       path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-alignment-plugin', 'src'),
       path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-image-plugin', 'src'),
+      path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-table-plugin', 'src'),
+      path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-table-plugin', 'src'),
       path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-resizeable-plugin', 'src')
     ]
   }]
@@ -101,6 +103,8 @@ resolve: {
     'draft-js-focus-plugin': path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-focus-plugin', 'src'),
     'draft-js-alignment-plugin': path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-alignment-plugin', 'src'),
     'draft-js-image-plugin': path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-image-plugin', 'src'),
+    'draft-js-table-plugin': path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-table-plugin', 'src'),
+    'draft-js-table-plugin': path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-table-plugin', 'src'),
     'draft-js-resizeable-plugin': path.join(__dirname, 'node_modules', 'draft-js-plugins', 'draft-js-resizeable-plugin', 'src')
   }
 }

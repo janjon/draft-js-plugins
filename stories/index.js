@@ -72,6 +72,9 @@ import SimpleVideoEditor from './Video/SimpleVideoEditor';
 import CustomVideoEditor from './Video/CustomVideoEditor';
 import CustomAddVideoEditor from './Video/CustomAddVideoEditor';
 
+// Table
+import AddTableEditor from './Table/AddTableEditor';
+
 storiesOf('Alignment Plugin', module)
   .add('Editor with Alignment Plugin', () => <SimpleAlignmentEditor />);
 
@@ -100,6 +103,9 @@ storiesOf('Image Plugin')
   .add('Editor with Image Plugin', () => <SimpleImageEditor />)
   .add('Editor with Image Plugin and a few others: drag and drop, alignment, resizable, focus', () => <CustomImageEditor />)
   .add('Editor with Image Plugin and Add mechanism', () => <AddImageEditor />);
+
+storiesOf('Table Plugin')
+  .add('Editor with Table Plugin', () => <AddTableEditor />);
 
 storiesOf('Inline Toolbar Plugin')
   .add('Editor with default inline toolbar plugin', () => <SimpleInlineToolbarEditor />)

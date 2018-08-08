@@ -23,7 +23,8 @@
     "import/no-webpack-loader-syntax": 0,
     "import/extensions": 0,
     "jsx-a11y/img-has-alt": 0,
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "no-plusplus": 0
   },
   "settings": {
     "import/core-modules": [
@@ -50,6 +51,8 @@
       "draft-js-hashtag-plugin/lib/plugin.css",
       "draft-js-image-plugin",
       "draft-js-image-plugin/lib/plugin.css",
+      "draft-js-table-plugin",
+      "draft-js-table-plugin/lib/plugin.css",
       "draft-js-inline-toolbar-plugin",
       "draft-js-inline-toolbar-plugin/lib/plugin.css",
       "draft-js-linkify-plugin",
